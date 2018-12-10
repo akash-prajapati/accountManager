@@ -150,7 +150,7 @@
                     <plugin>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
-                        <version>${spring-boot-version}</version>
+                        <version>${springboot-version}</version>
                         <configuration>
                             <profiles>
                                 <profile>dev</profile>
@@ -176,7 +176,7 @@
                     <plugin>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
-                        <version>${spring-boot-version}</version>
+                        <version>${springboot-version}</version>
                         <configuration>
                             <profiles>
                                 <profile>uat</profile>
@@ -203,7 +203,7 @@
                     <plugin>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
-                        <version>${spring-boot-version}</version>
+                        <version>${springboot-version}</version>
                         <configuration>
                             <profiles>
                                 <profile>prod</profile>
