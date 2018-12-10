@@ -139,15 +139,20 @@
 	</dependencyManagement>
 
     
-                <profiles>
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
+
+
+	<build>
+		<plugins>
+				<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.8.0</version>
+						<configuration>
+						  <source>${java.version}</source>
+						  <target>${java.version}</target>
+						</configuration>
+					
+					 <plugin>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <version>${springboot-version}</version>
@@ -163,78 +168,8 @@
 							</goals>
 						  </execution>
 						</executions>
-                    </plugin>                
-                    					 
-                </plugins>
-            </build>
-        </profile>
-        
-         <profile>
-            <id>uat</id>            
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-maven-plugin</artifactId>
-                        <version>${springboot-version}</version>
-                        <configuration>
-                            <profiles>
-                                <profile>uat</profile>
-                            </profiles>
-                        </configuration>
-                        <executions>
-						  <execution>
-							<goals>
-							  <goal>repackage</goal>
-							</goals>
-						  </execution>
-						</executions>
-                    </plugin>                
-                    					 
-                </plugins>
-            </build>
-        </profile>       
-
-
-         <profile>
-            <id>prod</id>            
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-maven-plugin</artifactId>
-                        <version>${springboot-version}</version>
-                        <configuration>
-                            <profiles>
-                                <profile>prod</profile>
-                            </profiles>
-                        </configuration>
-                        <executions>
-						  <execution>
-							<goals>
-							  <goal>repackage</goal>
-							</goals>
-						  </execution>
-						</executions>
-                    </plugin>             
-                    
-					 
-                </plugins>
-            </build>
-        </profile>
-
-    </profiles>
-
-	<build>
-		<plugins>
-				<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<version>3.8.0</version>
-						<configuration>
-						  <source>${java.version}</source>
-						  <target>${java.version}</target>
-						</configuration>
+                    </plugin>    
+					
 				</plugin>
 		</plugins>
 	</build>
