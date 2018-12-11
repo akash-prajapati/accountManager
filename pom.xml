@@ -7,7 +7,6 @@
 	<artifactId>accountManager</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-
 	<name>AccountManager</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -15,8 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<springboot-version>2.0.6.RELEASE</springboot-version>
-		<spring-cloud.version>Finchley.SR2</spring-cloud.version>
-		
+		<spring-cloud.version>Finchley.SR2</spring-cloud.version>		
 		<!-- Properties is for the tracing and monitoring -->
 		<jaeger.version>0.31.0</jaeger.version>
 		<micrometer.version>1.0.0</micrometer.version>
@@ -105,9 +103,7 @@
 		     <version>${prometheus.version}</version>
 		</dependency>
 
-		
-
-		<dependency>
+	    	<dependency>
 			<groupId>io.prometheus.jmx</groupId>
 			<artifactId>jmx_prometheus_javaagent</artifactId>
 			<version>${prometheus.jmx-exporter.version}</version>
@@ -150,28 +146,25 @@
 						  <source>${java.version}</source>
 						  <target>${java.version}</target>
 						</configuration>
-					</plugin> 
-					 <plugin>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-maven-plugin</artifactId>
-                        <version>${springboot-version}</version>
-                        <configuration>
-                            <profiles>
-                                <profile>dev</profile>
-                            </profiles>
-                        </configuration>
-                        <executions>
+				</plugin> 
+				<plugin>
+                        			<groupId>org.springframework.boot</groupId>
+                        			<artifactId>spring-boot-maven-plugin</artifactId>
+                        			<version>${springboot-version}</version>
+                        			<configuration>
+                            				<profiles>
+                                				<profile>dev</profile>
+                            				</profiles>
+                        			</configuration>
+                        			<executions>
 						  <execution>
 							<goals>
 							  <goal>repackage</goal>
 							</goals>
 						  </execution>
 						</executions>
-                       
-					
 				</plugin>
 		</plugins>
 	</build>
-	
 
 </project>
